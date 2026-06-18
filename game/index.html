@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Eier-Fang im Bundestag</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="stage">
+    <canvas id="game"></canvas>
+
+    <!-- HUD -->
+    <div id="hud" class="hidden">
+      <div class="hud-left">
+        <div class="hud-score">Punkte: <span id="score">0</span></div>
+        <div class="hud-level">Level <span id="level">1</span></div>
+      </div>
+      <div class="hud-right">
+        <span class="strike-label">Strikes</span>
+        <div id="strikes">
+          <span class="strike-dot" data-i="0"></span>
+          <span class="strike-dot" data-i="1"></span>
+          <span class="strike-dot" data-i="2"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Start screen -->
+    <div id="startScreen" class="overlay">
+      <div class="panel">
+        <h1>🥚 Eier-Fang im Bundestag</h1>
+        <p>Von oben fallen Eier herunter. Fang sie mit dem Kopf auf!</p>
+        <ul class="rules">
+          <li>Gefangenes Ei = <b>1 Punkt</b></li>
+          <li>Verpasstes Ei = <b>1 Strike</b></li>
+          <li>Nach <b>3 Strikes</b> ist Schluss</li>
+          <li>Je weiter du kommst, desto schneller wird's – Musik & Stimmung ziehen mit</li>
+        </ul>
+        <p class="controls">Steuerung: <b>← →</b> (oder <b>A / D</b>) Tasten · oder <b>Finger</b> (mobil)</p>
+        <button id="startBtn" class="btn">Spiel starten</button>
+      </div>
+    </div>
+
+    <!-- Game over screen -->
+    <div id="overScreen" class="overlay hidden">
+      <div class="panel over-panel">
+        <img id="overImg" class="over-img" src="assets/olaf.png" alt="" />
+        <h1 id="overTitle">Game Over</h1>
+        <p class="over-score"><span id="finalScore">0</span> Punkte · Best <span id="bestScore">0</span></p>
+        <button id="restartBtn" class="btn btn-min">Nochmal</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
